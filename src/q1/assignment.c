@@ -15,4 +15,11 @@ int main(int arg, char* argc[]){
   printf("char size %d \n", c);
 
   return 0;
+
+  /*Prints out:
+  Int size 4 
+  Int pointer size 8 
+  double pointer size 8 
+  long size 8 
+  char size 8 */
 }
