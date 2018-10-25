@@ -3,6 +3,8 @@
 #include <string.h>
 #include "linkedList.h"
 
+int cur = 0;
+
 typedef struct listElementStruct{
   char* data;
   size_t size;
@@ -58,4 +60,14 @@ void deleteAfter(listElement* after){
   //need to free the memory because we used malloc
   free(delete->data);
   free(delete);
+}
+
+int length(listElement* list){
+  int size = 0;
+
+  while(list != NULL){
+    ++size;
+    list = list->next;
+  }
+  return size;
 }

@@ -17,5 +17,7 @@ listElement* insertAfter(listElement* after, char* data, size_t size);
 //Delete the element after the given el
 void deleteAfter(listElement* after);
 
+int length(listElement* list);
+
 
 #endif
