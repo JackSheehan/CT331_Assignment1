@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include "tests.h"
 #include "genericLinkedList.h"
 
 void runTests(){
   printf("Tests running...\n");
 
   // Testing Char -- 
-  char letter = "J";
+  char letter = "j";
   listElement *test = createEl(&letter, sizeof(char), &printChar);
   length(test);
   printf("Length of list at beginning: %d\n", length(test));
@@ -35,9 +36,9 @@ void runTests(){
   insertAfter(test3, &f, sizeof(f), &printFloat);
   length(test3);
   printf("Length of list after adding float: %d\n", length(test));
- // traverse(test);
+  //traverse(test);
 
-  long ld = 102.345;
+  long ld = 101.34;
   insertAfter(test3, &ld, sizeof(ld), &printLong);
   length(test3);
   printf("Length after adding long: %d\n", length(test));

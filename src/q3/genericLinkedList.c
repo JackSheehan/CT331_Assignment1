@@ -25,7 +25,7 @@ listElement* createEl(void* data, size_t size, printFunction print){
     free(e); //release the previously allocated memory
     return NULL; //return NULL to indicate an error.
   }
-  memmove(data, dataPointer, size);
+  memmove(dataPointer, data, size);
   e->data = dataPointer;
   e->size = size;
   e->print = print;
@@ -33,14 +33,6 @@ listElement* createEl(void* data, size_t size, printFunction print){
   return e;
 }
 
-//Prints out each element in the list
-void traverse(listElement* start){
-  listElement* current = start;
-  while(current != NULL){
-    current->print(current->data);
-    current = current->next;
-  }
-}
 void printChar(void* data){
   printf("%c\n", *(char*)data);
 }
@@ -64,6 +56,16 @@ void printLong(void* data){
 void printString(void* data){
   printf("%s\n", data);
 }
+
+//Prints out each element in the list
+void traverse(listElement* start){
+  listElement* current = start;
+  while(current != NULL){
+    current->print(current->data);
+    current = current->next;
+  }
+}
+
 
 //Inserts a new element after the given el
 //Returns the pointer to the new element
