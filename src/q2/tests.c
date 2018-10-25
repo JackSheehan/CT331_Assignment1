@@ -30,27 +30,32 @@ void runTests(){
   printf("\n");
 
   //Testing LinkedList stack
+  printf("\n------Testing Queue-----\n");
   listElement* testQueue = createEl("Queue1", 30);
   length(testQueue);
-  printf("%d \n", length(testQueue));
+  printf("Size after creating: %d \n", length(testQueue));
+  printf("Pushing in elements: \n");
   push(&testQueue, "Queue2", 30);
   push(&testQueue, "Queue3", 30);
   traverse(testQueue);
-  pop(testQueue);
+  printf("Popping out element: \n");
+  pop(&testQueue);
   traverse(testQueue);
   length(testQueue);
-  printf("%d \n", length(testQueue));
+  printf("Size after popping and pushing: %d \n", length(testQueue));
 
 
  //Testing LinkedList queue
+  printf("\n------Testing Stack-----\n");
   listElement* stack = createEl("Stack1.", 30);
   length(stack);
-  printf("%d", length(stack));
+  printf("Size before enqueue: %d \n", length(stack));
   enqueue(&stack, "Stack2", 30);
   enqueue(&stack, "Stack3", 30);
   traverse(stack);
+  printf("Dequeueing: \n");
   dequeue(stack);
   traverse(stack);
   length(stack);
-  printf("%d", length(stack));
+  printf("Size: %d \n", length(stack));
 }
