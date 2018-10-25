@@ -2,7 +2,44 @@
 #include "tests.h"
 #include "linkedList.h"
 
+void testFunction1(){
+  printf("------Testing the Queue:-----\n");
+  listElement* testQueue = createEl("Queue1", 30);
+  length(testQueue);
+  printf("Size after creating: %d \n", length(testQueue));
+  printf("Pushing in elements: \n");
+  listElement* q2 = insertAfter(testQueue, "Queue2", 30);
+  insertAfter(q2, "Queue3", 30);
+  push(&testQueue, "Queue4", 30);
+  push(&testQueue, "Queue5", 30);
+  traverse(testQueue);
+  printf("Popping out element: \n");
+  pop(&testQueue);
+  deleteAfter(testQueue);
+  traverse(testQueue);
+  length(testQueue);
+  printf("Size after popping and pushing: %d \n", length(testQueue));
+}
+
+void testFunction2(){
+  printf("\n------Testing Stack-----\n");
+  listElement* stack = createEl("Stack1.", 30);
+  length(stack);
+  printf("Size before enqueue: %d \n", length(stack));
+  enqueue(&stack, "Stack2", 30);
+  enqueue(&stack, "Stack3", 30);
+  traverse(stack);
+  printf("Dequeueing: \n");
+  dequeue(stack);
+  traverse(stack);
+  length(stack);
+  printf("Size: %d \n", length(stack));
+}
+
 void runTests(){
+  testFunction1();
+  testFunction2();
+  /*
   printf("Tests running...\n");
   listElement* l = createEl("Test String (1).", 30);
   //printf("%s\n%p\n", l->data, l->next);
@@ -58,4 +95,5 @@ void runTests(){
   traverse(stack);
   length(stack);
   printf("Size: %d \n", length(stack));
+  */
 }
