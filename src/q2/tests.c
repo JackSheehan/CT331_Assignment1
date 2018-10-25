@@ -27,4 +27,30 @@ void runTests(){
   length(l);
   printf("%d", length(l));
   printf("\nTests complete.\n");
+  printf("\n");
+
+  //Testing LinkedList stack
+  listElement* testQueue = createEl("Queue1", 30);
+  length(testQueue);
+  printf("%d \n", length(testQueue));
+  push(&testQueue, "Queue2", 30);
+  push(&testQueue, "Queue3", 30);
+  traverse(testQueue);
+  pop(testQueue);
+  traverse(testQueue);
+  length(testQueue);
+  printf("%d \n", length(testQueue));
+
+
+ //Testing LinkedList queue
+  listElement* stack = createEl("Stack1.", 30);
+  length(stack);
+  printf("%d", length(stack));
+  enqueue(&stack, "Stack2", 30);
+  enqueue(&stack, "Stack3", 30);
+  traverse(stack);
+  dequeue(stack);
+  traverse(stack);
+  length(stack);
+  printf("%d", length(stack));
 }

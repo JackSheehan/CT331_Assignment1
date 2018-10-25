@@ -71,3 +71,33 @@ int length(listElement* list){
   }
   return size;
 }
+
+void push(listElement** list, char* data, size_t size){
+  listElement* newEl = createEl(data, size);
+  newEl->next = *list;
+  *list = newEl;
+}
+
+listElement* pop(listElement** list){
+  listElement *temp = *list;
+  *list = temp->next;
+  return temp;
+}
+
+void enqueue(listElement** list, char* data, size_t size){
+  listElement* newEl = createEl(data, size);
+  newEl->next = *list;
+  *list = newEl;
+ }
+
+listElement* dequeue(listElement* list){
+  listElement *temp = list;
+
+  while((temp->next)->next !=NULL){
+    temp = temp->next;
+  }
+
+  listElement *tail = temp;
+  temp->next = NULL;
+  return tail;
+}
